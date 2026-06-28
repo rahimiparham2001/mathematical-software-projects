@@ -1,0 +1,139 @@
+\chapter{مدل‌سازی ریاضی و الگوریتم‌ها}\label{chap:2}
+
+\section{مقدمه و مدل‌سازی ریاضی}\label{sec:2-1}
+در این فصل، به بررسی چارچوب ریاضی و مدل‌سازی‌های انجام‌شده در این مستند پرداخته می‌شود. هدف اصلی، ارائه یک ساختار تحلیلی منسجم برای توصیف رفتار سیستم و ارزیابی عملکرد آن است. 
+
+\subsection{توابع چندضابطه‌ای و حد}\label{subsec:2-1-1}
+توابع چندضابطه‌ای در مدل‌سازی پدیده‌هایی که رفتار آن‌ها در بازه‌های مختلف تغییر می‌کند، کاربرد فراوانی دارند. فرض کنید $ x $ یک متغیر حالت باشد؛ در این صورت، تابع $ f(x) $ را می‌توان به صورت رابطه \eqref{eq3} تعریف کرد:
+\begin{equation}
+	\label{eq3}
+	f(x) =
+	\begin{cases}
+		x^2 + 2x & x \geq 0 \\
+		-x^3 & x < 0
+	\end{cases}.
+\end{equation}
+همان‌طور که مشاهده می‌شود، رفتار تابع در مرز $ x = 0 $ تغییر می‌کند. برای بررسی رفتار مجانبی سامانه، محاسبه حد تابع در بی‌نهایت ضروری است که به صورت رابطه \eqref{eq4} بیان می‌شود:
+\begin{equation}
+	\label{eq4}
+	\lim_{x \rightarrow \infty} f(x) = \infty.
+\end{equation}
+
+\subsection{بسط چندجمله‌ای و انتگرال‌گیری}\label{subsec:2-1-2}
+برای تقریب رفتار غیرخطی سامانه، می‌توان از بسط چندجمله‌ای استفاده نمود. فرض کنید $ N $ یک عدد صحیح و نشان‌دهنده مرتبه چندجمله‌ای باشد. در این حالت، چندجمله‌ای $ P(x) $ به فرم رابطه \eqref{eq5} ارائه می‌گردد:
+\begin{equation}
+	\label{eq5}
+	P(x) = \sum_{n=0}^{N} a_n x^n.
+\end{equation}
+به منظور محاسبه مساحت زیر نمودار یا ارزیابی انرژی سامانه در بازه $ [a, b] $، از عملگر انتگرال‌گیری مطابق رابطه \eqref{eq6} استفاده می‌شود:
+\begin{equation}
+	\label{eq6}
+	\int_{a}^{b} P(x) dx = F(b) - F(a).
+\end{equation}
+
+\subsection{امید ریاضی و واریانس}\label{subsec:2-1-3}
+برای تعمیم این مفاهیم و بررسی دقیق‌تر رفتارهای آماری، فرض کنید $ X $ یک متغیر تصادفی پیوسته با تابع چگالی احتمال\LTRfootnote{Probability Density Function (PDF)}
+ $ f_X(x) $ باشد و $ g(X) $ یک تابع پیوسته و دلخواه روی این متغیر تعریف نماید. بر اساس قضیه آماردان ناآگاه\LTRfootnote{Law of the Unconscious Statistician (LOTUS)}، امید ریاضی برای تابع $ g(X) $ با استفاده از انتگرال‌گیری بر روی کل دامنه متغیر تصادفی به شکل زیر محاسبه می‌گردد:
+\begin{equation}
+	\label{eq7}
+	\mathbb{E}[g(X)] = \int_{-\infty}^{+\infty} g(x) f_X(x) \, dx,
+\end{equation}
+همچنین با استفاده از گشتاور دوم، واریانس این تابع تعمیم‌یافته به صورت رابطه زیر به دست می‌آید:
+\begin{equation}
+	\label{eq8}
+	\mathrm{Var}(g(X)) = \int_{-\infty}^{+\infty} \left( g(x) - \mathbb{E}[g(X)] \right)^2 f_X(x) \, dx.
+\end{equation}
+همان‌طور که در روابط \eqref{eq7} و \eqref{eq8} مشاهده می‌شود، استفاده از ساختار انتگرالی به ما اجازه می‌دهد تا رفتار مدل را در فضاهای پیوسته با دقت بالاتری ارزیابی کنیم.
+\subsection{تجزیه یک عبارت}\label{subsec:2-1-4}
+در بسیاری از مسائل تحلیلی و محاسبات عددی، کار با یک فرم بسته و پیچیده ریاضی دشوار است. در این موارد، از تکنیک تجزیه کسر جزئی\LTRfootnote{Partial Fraction Decomposition} برای شکستن یک عبارت گویای پیچیده به مجموعه‌ای از کسرهای ساده‌تر استفاده می‌شود. فرض کنید عبارت گویای $ R(x) $ به صورت زیر تعریف شده باشد:
+\begin{equation}
+	\label{eq9}
+	R(x) = \frac{x^2 + 4x + 1}{x^3 - x}
+\end{equation}
+برای تجزیه این عبارت، ابتدا مخرج کسر را به عوامل اول تجزیه کرده و سپس کسر اولیه را به عنوان مجموعی از کسرهای ناشناخته با ضرایب مجهول بازنویسی می‌کنیم. این فرآیند بسط و تجزیه در چند خط به صورت زیر قابل نمایش است:
+\begin{align}
+	\frac{x^2 + 4x + 1}{x^3 - x} &= \frac{x^2 + 4x + 1}{x(x - 1)(x + 1)} \nonumber \\
+	&= \frac{A}{x} + \frac{B}{x - 1} + \frac{C}{x + 1} \nonumber \\
+	&= \frac{A(x^2 - 1) + B(x^2 + x) + C(x^2 - x)}{x(x - 1)(x + 1)} \label{eq10}
+\end{align}
+
+
+همان‌طور که در رابطه \eqref{eq10} مشاهده می‌شود، با هم‌مخرج کردن سمت راست تساوی و برابر قرار دادن صورت کسرها، یک دستگاه معادلات خطی\LTRfootnote{System of Linear Equations} برای یافتن ضرایب $ A $، $ B $ و $ C $ شکل می‌گیرد:
+\begin{align*}
+	x^2 &: \quad A + B + C = 1, \\
+	x^1 &: \quad B - C = 4, \\
+	x^0 &: \quad -A = 1.
+\end{align*}
+
+
+حل دستگاه معادلات بالا به سادگی مقادیر مجهول را به دست می‌دهد و در نهایت عبارت پیچیده اولیه به فرمی ساده‌تر و قابل انتگرال‌گیری یا مشتق‌گیری تجزیه می‌گردد.
+
+\section{الگوریتم بهینه‌سازی و روندنما}\label{sec:2-2}
+برای یافتن مقادیر بهینه پارامتر‌‌های مدل، از الگوریتم‌های بهینه‌سازی\LTRfootnote{Optimization Algorithms} مبتنی بر تکرار استفاده شده است. یکی از روش‌های کارآمد در این زمینه، روش گرادیان کاهشی\LTRfootnote{Gradient Descent} است.\cite{ruder2016overview} در این بخش، شبه‌کد\LTRfootnote{Pseudocode} و روندنمای مربوط به این الگوریتم با در نظر گرفتن معیار توقف بر اساس خطای\LTRfootnote{Error} محاسباتی، ارائه می‌گردد.
+
+\subsection{شبه‌کد الگوریتم}\label{subsec:2-2-1}
+روند اجرایی روش گرادیان کاهشی در قالب الگوریتم \ref{alg1} تدوین شده است. در این ساختار، نماد $ e_{rr} $ نشان‌دهنده میزان خطای فعلی، $ \epsilon $ آستانه تحمل خطا و $ N_{\max} $ حداکثر تعداد تکرار مجاز است.
+
+در الگوریتم \ref{alg1}، شبه‌کد مربوط به روش بهینه‌سازی گرادیان کاهشی\LTRfootnote{Gradient Descent} ارائه شده است. این روش، یک الگوریتم تکرارشونده برای یافتن نقطه کمینه محلی یک تابع هدفِ مشتق‌پذیر است.
+
+همان‌طور که در روند اجرای این الگوریتم مشاهده می‌شود، کار با دریافت حدس اولیه برای پارامترها ($\theta_0$)، نرخ یادگیری\LTRfootnote{Learning Rate} ($\alpha$) که طول گام‌ها را کنترل می‌کند، حد تحمل خطا ($\epsilon$) و حداکثر تعداد تکرار مجاز ($N_{\max}$) آغاز می‌گردد. در ابتدا، مقدار خطای اولیه بی‌نهایت و شمارنده تکرارها صفر در نظر گرفته می‌شود.
+
+در هر تکرار از حلقه، مراحل زیر اجرا می‌گردد:
+
+ابتدا بردار گرادیان تابع هزینه $J$ نسبت به پارامتر‌ها، یعنی $\nabla J(\theta_k)$، در نقطه فعلی محاسبه می‌شود. این بردار جهت بیشترین افزایش تابع را نشان می‌دهد. سپس، الگوریتم با استفاده از رابطه به‌روزرسانی $\theta_{k+1} = \theta_k - \alpha \nabla J(\theta_k)$، گامی به اندازه $\alpha$ در خلاف جهت گرادیان برمی‌دارد تا مقدار تابع هزینه کاهش یابد. پس از به‌روزرسانی پارامترها، مقدار خطای جدید ($e_{rr}$) به صورت نُرم اقلیدسیِ اختلاف مقادیر جدید و قدیم پارامتر‌ها محاسبه می‌شود.
+
+این فرآیند تا زمانی تکرار می‌شود که شرط توقف ارضا گردد؛ یعنی یا مقدار خطای $e_{rr}$ از حد $\epsilon$ تعیین شده کمتر شود (که نشان‌دهنده همگرایی الگوریتم است)، و یا تعداد تکرارها ($k$) به سقف مجاز $N_{\max}$ برسد تا از افتادن در حلقه‌های بی‌نهایت جلوگیری شود. در نهایت، بهترین مقادیر یافت شده برای پارامتر‌ها به عنوان خروجی بازگردانده می‌شوند.
+
+
+
+
+
+
+\begin{algorithm}[H]
+	\caption{الگوریتم گرادیان کاهشی}
+	\label{alg1}
+	\begin{algorithmic}[1]
+		\Require پارامترهای اولیه $\theta_0$، نرخ یادگیری $\alpha$، حد تحمل $\epsilon$، حداکثر تکرار $N_{\max}$
+		\Ensure پارامترهای بهینه‌شده $\theta^*$
+		\State $ e_{rr} \gets \infty $
+		\State $ k \gets 0 $
+		\While{$ e_{rr} > \epsilon \land k < N_{\max} $}
+		\State $ \nabla J(\theta_k) \gets \frac{\partial J}{\partial \theta}\big|_{\theta=\theta_k} $
+		\State $ \theta_{k+1} \gets \theta_k - \alpha \nabla J(\theta_k) $
+		\State $ e_{rr} \gets ||\theta_{k+1} - \theta_k||_2 $
+		\State $ k \gets k + 1 $
+		\EndWhile
+		\State \Return $\theta_k$
+	\end{algorithmic}
+\end{algorithm}
+
+\vspace{3cm}
+\subsection{روندنمای فرآیند}\label{subsec:2-2-2}
+به منظور درک بهتر روند اجرای الگوریتم \ref{alg1}، روندنما مربوطه در \figurename~\ref{Flowchart2} رسم شده است. این شکل به وضوح نشان می‌دهد که چگونه متغیرهای حالت و مقدار خطا در هر تکرار به‌روزرسانی می‌شوند تا زمانی که شرط توقف برآورده گردد.
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[node distance=2cm, auto, thick]
+		
+		\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!20]
+		\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, align=center, draw=black, fill=blue!20]
+		\tikzstyle{decision} = [diamond, aspect=2, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!20]
+		\tikzstyle{arrow} = [thick,->,>=stealth]
+		
+		
+		\node (start) [startstop] {شروع};
+		\node (init) [process, below of=start] {$ k \gets 0, e_{rr} \gets \infty $};
+		\node (decide) [decision, below of=init, yshift=-1cm] {$ e_{rr} > \epsilon \land k < N_{\max} $};
+		\node (calc) [process, below of=decide, yshift=-1.5cm] {$ \nabla J(\theta_k) \gets \left.\frac{\partial J}{\partial \theta}\right|_{\theta=\theta_k} $\\[1ex] $ \theta_{k+1} \gets \theta_k - \alpha \nabla J(\theta_k) $};
+		\node (update) [process, below of=calc, yshift=-0.5cm] {$e_{rr} \gets \|\theta_{k+1} - \theta_k\|_2 \ , \ k \gets k + 1$};
+		\node (stop) [startstop, right of=decide, xshift=4cm] {(پایان) خروجی $\theta^*$};
+		
+		\draw [arrow] (start) -- (init);
+		\draw [arrow] (init) -- (decide);
+		\draw [arrow] (decide) -- node[anchor=east] {بله} (calc);
+		\draw [arrow] (decide) -- node[anchor=south] {خیر} (stop);
+		\draw [arrow] (calc) -- (update);
+		\draw [arrow] (update) -- ++(-4.5,0) |- (decide);
+	\end{tikzpicture}
+	\caption{فلوچارت فرآیند بهینه‌سازی و بررسی شرط توقف}
+	\label{Flowchart2}
+\end{figure}

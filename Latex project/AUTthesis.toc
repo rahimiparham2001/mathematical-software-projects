@@ -1,0 +1,44 @@
+\edef \SavedTocDepth {\the \value {tocdepth}}
+\setcounter {tocdepth}{-10}
+\contentsline {chapter}{فهرست تصاویر}{د}{section*.1}%
+\contentsline {chapter}{فهرست جداول}{ه}{section*.2}%
+\par عنوان\hfill صفحه \par 
+\setcounter {tocdepth}{\SavedTocDepth }
+\contentsline {chapter}{\numberline {1}مقدمه و مفاهیم اولیه}{1}{chapter.1}%
+\contentsline {section}{\numberline {1-1}تاریخچه و اهمیت تجزیه اعداد}{2}{section.1.1}%
+\contentsline {section}{\numberline {1-2}تعاریف پایه ریاضی}{3}{section.1.2}%
+\contentsline {section}{\numberline {1-3}ساختار مستند}{4}{section.1.3}%
+\contentsline {chapter}{\numberline {2}مدل‌سازی ریاضی و الگوریتم‌ها}{5}{chapter.2}%
+\contentsline {section}{\numberline {2-1}مقدمه و مدل‌سازی ریاضی}{6}{section.2.1}%
+\contentsline {subsection}{\numberline {2-1-1}توابع چندضابطه‌ای و حد}{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2-1-2}بسط چندجمله‌ای و انتگرال‌گیری}{6}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2-1-3}امید ریاضی و واریانس}{7}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2-1-4}تجزیه یک عبارت}{7}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2-2}الگوریتم بهینه‌سازی و روندنما}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2-2-1}شبه‌کد الگوریتم}{8}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2-2-2}روندنمای فرآیند}{10}{subsection.2.2.2}%
+\contentsline {chapter}{\numberline {3}توابع زیان و ارزیابی مدل‌ها}{11}{chapter.3}%
+\contentsline {section}{\numberline {3-1}مقدمه}{12}{section.3.1}%
+\contentsline {section}{\numberline {3-2}منظم‌سازی و رگرسیون ریج}{12}{section.3.2}%
+\contentsline {section}{\numberline {3-3}تابع زیان هیوبر}{13}{section.3.3}%
+\contentsline {section}{\numberline {3-4}معادله نرمال}{14}{section.3.4}%
+\contentsline {section}{\numberline {3-5}الگوریتم‌های بهینه‌سازی}{14}{section.3.5}%
+\contentsline {section}{\numberline {3-6}معیارهای ارزیابی مدل‌ها}{15}{section.3.6}%
+\contentsline {subsection}{\numberline {3-6-1}معیارهای ارزیابی در مسائل رگرسیون}{15}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3-6-2}معیارهای ارزیابی در مسائل دسته‌بندی}{16}{subsection.3.6.2}%
+\contentsline {chapter}{\numberline {4}شبکه‌های عصبی عمیق}{17}{chapter.4}%
+\contentsline {section}{\numberline {4-1}مقدمه}{18}{section.4.1}%
+\contentsline {section}{\numberline {4-2}یاخته عصبی مصنوعی}{18}{section.4.2}%
+\contentsline {section}{\numberline {4-3}شبکه‌های عصبی چندلایه}{20}{section.4.3}%
+\contentsline {subsection}{\numberline {4-3-1}ساختار لایه‌ها}{20}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4-3-2}توابع فعال‌ساز رایج}{20}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4-3-3}توابع زیان}{22}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4-4}آموزش شبکه عصبی}{22}{section.4.4}%
+\contentsline {subsection}{\numberline {4-4-1}انتشار رو به جلو و پس‌انتشار خطا}{22}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4-4-2}الگوریتم‌های بهینه‌سازی}{23}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4-5}کاربردهای شبکه‌های عصبی عمیق}{24}{section.4.5}%
+\contentsline {chapter}{\numberline {5}جمع‌بندي و نتيجه‌گيري و پیشنهادات}{25}{chapter.5}%
+\contentsline {section}{\numberline {5-1}جمع‌بندی و نتیجه‌گیری}{26}{section.5.1}%
+\contentsline {section}{\numberline {5-2}پیشنهادها برای کارهای آینده}{27}{section.5.2}%
+\contentsline {chapter}{منابع و مراجع}{28}{appendix*.10}%
+\contentsfinish 
